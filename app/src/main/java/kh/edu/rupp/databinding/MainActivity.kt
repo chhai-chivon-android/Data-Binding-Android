@@ -1,23 +1,25 @@
 package kh.edu.rupp.databinding
 
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.Bindable
-import androidx.databinding.DataBindingUtil
 import kh.edu.rupp.databinding.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    @Bindable
-    protected var mUser: User? = null
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val view = binding.root
+        setContentView(view)
+        initViews()
+    }
 
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        val user = User("Niharika", "Software Engineer")
-        binding.user = user
+    private fun initViews(){
+        var user = User("user 1" , "user1@gmail.com")
+            binding.user = user
     }
 }
