@@ -16,26 +16,11 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUser"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Name : " />
+            android:layout_height="wrap_content"/>
 
-        <TextView
-            android:id="@+id/tv_username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{user.username}" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Last Name : " />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{user.email}"/>
     </LinearLayout>
 
 </layout>
